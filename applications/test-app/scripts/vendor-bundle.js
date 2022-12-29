@@ -21208,8 +21208,8 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 process.env = {NODE_ENV:""};
-process.version = "v14.18.1";
-process.versions = {"node":"14.18.1","v8":"8.4.371.23-node.84","uv":"1.42.0","zlib":"1.2.11","brotli":"1.0.9","ares":"1.17.2","modules":"83","nghttp2":"1.42.0","napi":"8","llhttp":"2.1.4","openssl":"1.1.1l","cldr":"39.0","icu":"69.1","tz":"2021a","unicode":"13.0"};
+process.version = "v18.12.1";
+process.versions = {"node":"18.12.1","v8":"10.2.154.15-node.12","uv":"1.43.0","zlib":"1.2.11","brotli":"1.0.9","ares":"1.18.1","modules":"108","nghttp2":"1.47.0","napi":"8","llhttp":"6.0.10","openssl":"3.0.7+quic","cldr":"41.0","icu":"71.1","tz":"2022b","unicode":"14.0","ngtcp2":"0.8.1","nghttp3":"0.7.0"};
 process.execArgv = [];
 
 });

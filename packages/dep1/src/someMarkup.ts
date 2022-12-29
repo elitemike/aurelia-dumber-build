@@ -5,5 +5,5 @@ const template = require('./someMarkup.html');
 @inlineView(template)
 @customElement('some-markup')
 export class SomeMarkup {
-  public myValue = "test Item";
+  public myValue = "test Items";
 }

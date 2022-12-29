@@ -24,7 +24,7 @@ exports.App = App;
 
 });
 
-define('text!home.html',function(){return "<template>\r\n  <!-- <require from=\"@packages/dep1/someMarkup\"></require> -->\r\n\r\n  ${message} test ${sum}\r\n\r\n  <some-markup></some-markup>\r\n</template>";});
+define('text!home.html',function(){return "<template>\r\n  ${message} test ${sum}\r\n\r\n  <some-markup></some-markup>\r\n</template>";});
 define('home.js',['require','exports','module','@packages/dep1'],function (require, exports, module) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });

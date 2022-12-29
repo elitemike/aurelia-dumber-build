@@ -8,11 +8,16 @@
   ],
   "packageManager": "yarn@3.3.1",
   "devDependencies": {
-    "@goldstack/utils-typescript-references": "^0.3.4"
+    "@goldstack/utils-typescript-references": "^0.3.4",
+    "cpx": "^1.5.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "wsrun": "^5.2.4"
   },
   "scripts": {
     "fix-typescript-references": "utils-typescript-references",
-    "bootstrap": "npm install -g typescript && yarn install && yarn build",
-    "build": ""
+    "bootstrap": "npm install -g typescript && yarn install && yarn build:packages",
+    "build:packages": "yarn wsrun -m --stages build",
+    "watch:test-app": "yarn workspace test-app watch"
   }
 }
