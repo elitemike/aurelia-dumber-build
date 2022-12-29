@@ -1,7 +1,8 @@
 var dumber = require('gulp-dumber');
 var auDepsFinder = require('aurelia-deps-finder');
 var fs = require('fs');
-var {isProduction, isTest, outputDir} = require('./_env');
+var { isProduction, isTest, outputDir } = require('./_env');
+const node_modules_folder = "../../node_modules";
 
 module.exports = dumber({
   // src folder is by default "src".
@@ -30,7 +31,7 @@ module.exports = dumber({
   // dumber-module-loader is injected automatically by dumber bundler after prepends.
   prepend: [
     // Promise polyfill for IE
-    "node_modules/promise-polyfill/dist/polyfill.min.js"
+    node_modules_folder + "/promise-polyfill/dist/polyfill.min.js"
   ],
 
   // append after amd loader and all module definitions in entry bundle.
@@ -43,6 +44,7 @@ module.exports = dumber({
 
   // Explicit dependencies, can use either "deps" (short name) or "dependencies" (full name).
   deps: [
+
   ],
 
   // Code split is intuitive and flexible.
@@ -58,7 +60,7 @@ module.exports = dumber({
   //   for npm package file "node_modules/@scoped/foo/bar.js", the package name is "@scoped/foo"
 
   // Here we skip code splitting in test mode.
-  codeSplit: isTest ? undefined : function(moduleId, packageName) {
+  codeSplit: isTest ? undefined : function (moduleId, packageName) {
     // Here for any local src, put into app-bundle
     if (!packageName) return 'app-bundle';
     // The codeSplit func does not need to return a valid bundle name.
@@ -77,7 +79,7 @@ module.exports = dumber({
   //   "other-bundle.js": "other-bundle.js"
   // }
   // If you turned on hash, you need this callback to update index.html
-  onManifest: isTest ? undefined : function(filenameMap) {
+  onManifest: isTest ? undefined : function (filenameMap) {
     // Update index.html vendor-bundle.js with vendor-bundle.hash...js
     console.log('Update index.html with ' + filenameMap['vendor-bundle.js']);
     const indexHtml = fs.readFileSync('_index.html').toString()

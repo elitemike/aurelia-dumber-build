@@ -1,0 +1,19 @@
+{
+  "name": "@packages/dep2",
+  "description": "An Aurelia client application.",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "rimraf dist tsconfig.tsbuildinfo && tsc --build & cpx \"./src/**/*.{html,scss}\" dist",
+    "build:ts": "tsc --build",
+    "build:rest": "cpx \"./src/**/*.{html,scss}\" dist",
+    "watch-notworking": "run-p watch:ts",
+    "watch": "yarn watch:ts & yarn watch:rest",
+    "watch:ts": "tsc --build --watch",
+    "watch:rest": "cpx \"./src/**/*.{html,scss}\" dist --watch"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src"
+  ]
+}

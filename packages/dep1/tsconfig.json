@@ -1,0 +1,23 @@
+{
+  "extends": "../tsconfig",
+  "include": [
+    "src",
+    "types"
+  ],
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "src/*"
+      ]
+    },
+    "sourceRoot": "src"
+  },
+  "references": [
+    {
+      "path": "../dep2"
+    }
+  ]
+}

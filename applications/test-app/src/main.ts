@@ -15,6 +15,8 @@ export async function configure(aurelia: Aurelia) {
   aurelia.use.plugin('aurelia-testing');
   // @endif
 
+  aurelia.use.plugin("@packages/dep1");
+
   await aurelia.start();
   await aurelia.setRoot();
 }
